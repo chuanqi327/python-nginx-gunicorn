@@ -6,6 +6,7 @@ SOCKFILE=/var/run/gunicorn.sock                   # we will communicte using thi
 USER=www-data                                     # the user to run as
 GROUP=www-data                                    # the group to run as
 NUM_WORKERS="${NUM_WORKERS:-3}"                   # how many worker processes should Gunicorn spawn
+WSGI_APP="{$WSGI_APP:-application}"               # WSGI application object
 export PYTHONUNBUFFERED="True"                    # Disable stdin/stdout buffering.
 
 echo "Starting $NAME as `whoami`"
